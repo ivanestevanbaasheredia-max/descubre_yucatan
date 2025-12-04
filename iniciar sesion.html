@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta charset="utf-8">
+
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portal - Iniciar sesión</title>
+
+  
+  
+  <style>
+:root{
+--bg1:#0b0b0d;
+--bg2:#141416;
+--accent:#3fb7ff;
+--accent2:#1a73e8;
+--card:#0f1113;
+--muted:#9aa4ad;
+--glass: rgba(255,255,255,0.03);
+}
+html,body{
+height:100%;margin:0;
+font-family:Inter,Segoe UI,Arial,sans-serif;
+background:radial-gradient(1200px 600px at 10% 20%, rgba(26,43,74,0.25), transparent),
+linear-gradient(180deg,var(--bg1),var(--bg2));
+color:#fff;
+}
+
+.wrap{
+min-height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:28px;
+}
+
+.panel{
+width:100%;
+max-width:420px;
+background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.02));
+border-radius:14px;
+padding:28px;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+border:1px solid rgba(255,255,255,0.03);
+position:relative;
+overflow:hidden;
+}
+
+/* logo */
+.logo{
+display:flex;
+align-items:center;
+gap:14px;
+justify-content:center;
+margin-bottom:18px;
+}
+.logo-img{
+width:64px;height:64px;border-radius:12px;
+background:linear-gradient(135deg,var(--accent),var(--accent2));
+display:flex;align-items:center;justify-content:center;
+font-weight:700;font-size:20px;
+box-shadow:0 6px 18px rgba(26,115,232,0.18);
+}
+.logo-text{text-align:center;}
+.logo-text h1{margin:0;font-size:20px;color:#fff;}
+.logo-text p{margin:3px 0 0;font-size:13px;color:var(--muted);}
+
+.headline{text-align:center;margin:10px 0 18px 0;}
+.headline h2{margin:0;font-size:18px;color:#fff;}
+.headline small{color:var(--muted);display:block;margin-top:6px;}
+
+form{display:flex;flex-direction:column;gap:12px;}
+
+label{
+font-size:13px;color:var(--muted);
+margin-bottom:6px;display:block;
+}
+
+.field{
+background:var(--glass);
+border:1px solid rgba(255,255,255,0.04);
+padding:12px 14px;
+border-radius:10px;color:#fff;
+outline:none;
+transition:box-shadow .18s,border-color .18s;
+}
+.field:focus{
+box-shadow:0 6px 20px rgba(26,115,232,0.12);
+border-color:rgba(63,183,255,0.6);
+}
+
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+
+.remember{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px;}
+.remember input{width:16px;height:16px;}
+
+.btn{
+margin-top:8px;padding:12px;border-radius:10px;
+background:linear-gradient(90deg,var(--accent),var(--accent2));
+border:none;color:#fff;font-weight:700;
+cursor:pointer;font-size:16px;
+box-shadow:0 8px 24px rgba(26,115,232,0.18);
+}
+.btn:active{transform:translateY(1px);}
+
+.link{
+display:block;text-align:center;
+margin-top:12px;color:var(--muted);
+font-size:13px;text-decoration:none;
+}
+
+/* success overlay */
+.success{
+display:none;position:absolute;inset:0;
+background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.7));
+align-items:center;justify-content:center;
+flex-direction:column;gap:12px;
+}
+.success.show{display:flex;}
+.check{
+width:86px;height:86px;border-radius:50%;
+background:linear-gradient(90deg,#34d399,#10b981);
+display:flex;align-items:center;justify-content:center;
+box-shadow:0 10px 30px rgba(16,185,129,0.2);
+font-size:48px;
+}
+.success h3{margin:0;color:#fff;}
+.success p{margin:0;color:var(--muted);}
+
+@media(max-width:460px){
+.panel{padding:18px;max-width:360px;}
+.logo-img{width:54px;height:54px;font-size:18px;}
+}
+  </style>
+</head><body>
+<div class="wrap">
+<div class="panel" role="main" aria-labelledby="pageTitle"><!-- Overlay de éxito -->
+<div id="success" class="success">
+<div class="check">✔</div>
+<h3>¡Acceso concedido!</h3>
+<p>Serás redirigido en breve…</p>
+</div>
+<!-- Logo -->
+<div class="logo">
+<div class="logo-img">DY</div>
+<div class="logo-text">
+<h1 id="pageTitle">Descubre Yucatán</h1>
+<p>Conéctate a tu cuenta</p>
+</div>
+</div>
+<div class="headline">
+<h2>Iniciar sesión</h2>
+<small>Usa tu correo y contraseña para continuar</small>
+</div>
+<form id="loginForm" novalidate="">
+  <div><label for="user">Correo electrónico o usuario</label>
+  <input id="user" name="user" class="field" placeholder="usuario@ejemplo.com" required="" type="text"></div>
+  <div>
+  <label for="pass">Contraseña</label>
+  <input id="pass" name="pass" class="field" placeholder="••••••••" required="" minlength="6" type="password"></div>
+  <div class="row">
+  <label class="remember"><input id="remember" type="checkbox"> Guardar
+Contraseña</label>
+  <a class="link" href="#" onclick="alert('Función de recuperación no implementada.');return false;">¿Olvidaste
+tu contraseña?</a>
+  </div>
+  <button class="btn" type="submit">Entrar</button>
+</form>
+<a class="link" href="#">¿No tienes una cuenta?</a>
+<a href="inicio%20de%20sesion1.html" class="link">Regístrate</a>
+</div>
+</div>
+
+<script>
+// Validación + animación + redirección
+document.getElementById('loginForm').addEventListener('submit', function(e){
+e.preventDefault();
+
+const user = document.getElementById('user').value.trim();
+const pass = document.getElementById('pass').value;
+
+if(!user || !pass || pass.length < 6){
+alert('Por favor ingresa usuario y contraseña (mínimo 6 caracteres).');
+return;
+}
+
+// mostrar animación
+const success = document.getElementById('success');
+success.classList.add('show');
+
+// redirigir a Descubre Yucatan
+setTimeout(function(){
+window.location.href = "Descubre Yucatan.html";
+}, 1500);
+});
+</script>
+</body></html>

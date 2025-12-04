@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta charset="UTF-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aldea San Marcelino</title>
+
+  
+  
+  <style>
+
+/* 🌊 BORDE ONDA AZUL */
+.borde-onda-azul {
+    padding: 15px;
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    background: #0a1f33;
+}
+
+.borde-onda-azul::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle,
+        rgba(0,153,255,0.8) 10%,
+        rgba(0,102,204,0.6) 40%,
+        rgba(0,51,153,0.4) 70%,
+        transparent 100%
+    );
+    animation: ondaAzul 6s infinite linear;
+    transform-origin: center;
+}
+
+.borde-onda-azul::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: #0a1f33;
+    border-radius: 14px;
+    z-index: 1;
+}
+
+.borde-onda-azul * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes ondaAzul {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ----- Estilos generales ----- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f7f2;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ----- Título ----- */
+h1 {
+    text-align: center;
+    color: #2a5c37;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* ----- Caja descriptiva ----- */
+.description {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* ----- Subtítulos ----- */
+.subtitle {
+    text-align: center;
+    font-size: 22px;
+    color: #2a5c37;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+/* ----- Botones desplegables ----- */
+.toggle-box {
+    background: #ffffff;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    overflow: hidden;
+    border: 2px solid #2a5c37;
+}
+
+/* Botón */
+.toggle-text {
+    background: #2a5c37;
+    color: white;
+    padding: 15px 20px;
+    margin: 0;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    user-select: none;
+    letter-spacing: 1px;
+    transition: background 0.3s ease;
+}
+
+.toggle-text:hover {
+    background: #3a7849;
+}
+
+/* Flecha */
+.arrow {
+    transition: transform 0.3s ease;
+}
+.arrow.rotate {
+    transform: rotate(180deg);
+}
+
+/* Contenido desplegable */
+.toggle-content {
+    display: none;
+    padding: 15px;
+    line-height: 1.6;
+    animation: fade 0.3s ease;
+    background: #ffffff;
+    color: black; /* ← TEXTO NEGRO */
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+  </style>
+</head><body>
+<div class="container">
+<h1>Aldea San Marcelino</h1>
+<div class="description">
+<big>Es una comunidad de 27 habitantes maya hablantes que aún viven
+bajo
+prácticas tradicionales de la cultura maya, sin influencia del mundo
+moderno. Todo se realiza con reservación, incluido el servicio de
+alimentos. La aldea cuenta con baños para la comodidad de los
+visitantes.
+</big></div>
+<div class="subtitle">Ubicación</div>
+<div class="description">
+Se ubica a 8.5 kilómetros de la cabecera municipal, a solo 20 minutos
+de Tekax y a 1 hora 30 minutos de Mérida.
+</div>
+<div style="text-align: center;">
+<img style="width: 422px; height: 351px;" src="imagenes/Aldea%20san%20marcelino.jpg" alt="Aldea San Marcelino"></div>
+</div>
+
+<!-- ACTIVIDADES -->
+<div class="toggle-box borde-onda-azul">
+<p class="toggle-text" onclick="toggleInfo('info1','arrow1')">ACTIVIDADES
+<span id="arrow1" class="arrow">▼</span>
+</p>
+<div id="info1" class="toggle-content">
+• Adquirir artesanías <br>
+• Recorrido por el sendero <br>
+• Observación de espacios ceremoniales, la milpa tradicional y un
+chultún <br>
+• Almuerzo regional preparado por los habitantes.
+</div>
+</div>
+
+<!-- CONTACTO -->
+<div class="toggle-box borde-onda-azul">
+<p class="toggle-text" onclick="toggleInfo('info2','arrow2')">PARA MÁS
+INFORMACIÓN <span id="arrow2" class="arrow">▼</span>
+</p>
+<div id="info2" class="toggle-content">
+• 997 139 2221 <br>
+• <a href="https://www.facebook.com/people/Aldea-Maya-San-Marcelino/100063718159404/" target="_blank">Página de Facebook</a>
+</div>
+</div>
+
+<!-- PRECIO -->
+<div class="toggle-box borde-onda-azul">
+<p class="toggle-text" onclick="toggleInfo('info3','arrow3')">PRECIO <span id="arrow3" class="arrow">▼</span></p><div id="info3" class="toggle-content">
+• $250 por persona
+</div><a class="info-btn" href="PAGO.html">COMPRAR</a>
+
+</div>
+
+<script>
+function toggleInfo(id, arrowId) {
+    const content = document.getElementById(id);
+    const arrow = document.getElementById(arrowId);
+
+    if (content.style.display === "block") {
+        content.style.display = "none";
+        arrow.classList.remove("rotate");
+    } else {
+        content.style.display = "block";
+        arrow.classList.add("rotate");
+    }
+}
+</script>
+</body></html>

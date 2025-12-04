@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta charset="UTF-8">
+  <title>ZONAS ARQUEOLÓGICAS Y ALDEAS MAYAS</title>
+
+  
+  
+  <style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor de las columnas */
+.grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+/* Cada columna */
+.columna {
+    text-align: center;
+    width: 300px;
+}
+
+/* Imágenes */
+.columna img {
+    width: 100%;
+    border-radius: 8px;
+    border: 3px solid transparent;
+    transition: 0.4s ease;
+}
+
+/* Hover en imágenes */
+.columna img:hover {
+    border-color: #0078ff;
+    box-shadow: 0 0 12px #0078ff;
+    transform: scale(1.05);
+}
+
+/* Botones iguales */
+.info-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 10px;
+    background: #0078ff;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.info-btn:hover {
+    background: #005fcc;
+    transform: scale(1.07);
+}
+
+/* Títulos */
+.titulo {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+  </style>
+</head><body>
+<h1>ZONAS ARQUEOLÓGICAS Y ALDEAS MAYAS</h1>
+
+<!-- GRID PRINCIPAL (3 primeros atractivos) -->
+<div class="grid"><!-- Chacmultun -->
+<div class="columna">
+<div class="titulo">Chacmultun</div>
+<img src="imagenes/chacmultun.jpg" alt="Chacmultun"> <a class="info-btn" href="Chacmultun.html">Ver más</a> </div>
+<!-- Aldea San Marcelino -->
+<div class="columna">
+<div class="titulo">Aldea San Marcelino</div>
+<img src="imagenes/Aldea%20san%20marcelino.jpg" alt="Aldea San Marcelino"> <a class="info-btn" href="Aldea%20San%20Marcelino.html">Ver más</a> </div>
+<!-- Aldea San Anastacio -->
+<br>
+<br>
+<!-- SEGUNDA FILA (última aldea) -->
+<div class="grid"><!-- Aldea San Agustín -->
+<div class="columna">
+<div class="titulo">Aldea San Agustin</div>
+<img src="imagenes/Aldea%20San%20Agustin.jpg" alt="Aldea San Agustín"> <a class="info-btn" href="Aldea%20San%20Agustin.html">Ver más</a> </div>
+</div>
+</div>
+
+</body></html>

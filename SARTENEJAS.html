@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta charset="UTF-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sartenejas – Tekax</title>
+
+  
+  
+  <style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f6f9;
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+/* Encabezado */
+.header {
+    background: linear-gradient(135deg, #0a3a5a, #1677aa);
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+}
+.header h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+/* Contenedor general */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* Tarjetas */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
+
+/* 🎨 BORDE ESTILO TRAZO A MANO */
+.borde-mano {
+    border: 3px solid #0a3a5a;
+    border-radius: 16px;
+    outline: 3px dashed #1677aa;
+    outline-offset: -6px;
+}
+
+/* Acordeones */
+.acordeon {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0a3a5a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow {
+    transition: transform .3s;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.acordeon-content {
+    display: none;
+    padding: 15px 0 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Footer */
+.footer {
+    margin-top: 40px;
+    background: #0a3a5a;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+}
+  </style>
+</head><body>
+<div class="header">
+<h1>SARTENEJAS</h1>
+</div>
+
+<div class="container">
+<div class="card borde-mano">
+<p> Consta de 3 grutas: Las Trincheras, Murciélagos y El Platanal.
+Ofrece recorridos guiados, actividades como tirolesa, cuatrimotos y
+senderismo, además de comida típica yucateca, equipo de seguridad y
+guías locales. </p>
+<p><b>Ubicación:</b> Calle 70, carretera Tekax–Kancab 1.5 km, 97970
+Tekax, Yucatán.</p>
+<p><b>Horarios:</b> Viernes a Domingo · 10:00 a.m. – 5:00 p.m.</p>
+</div>
+<!-- Paquete 1 -->
+<div class="card borde-mano">
+<div class="acordeon" onclick="toggleInfo('info1','arrow1')">
+RECORRIDOS EN GRUTAS <span id="arrow1" class="arrow">▼</span> </div>
+<div id="info1" class="acordeon-content"> Tours guiados por las grutas,
+con descensos en rappel y caminatas entre formaciones geológicas y
+vestigios mayas. </div>
+</div>
+<!-- Paquete 2 -->
+<div class="card borde-mano">
+<div class="acordeon" onclick="toggleInfo('info2','arrow2')"> AVENTURA
+Y EXPLORACIÓN <span id="arrow2" class="arrow">▼</span> </div>
+<div id="info2" class="acordeon-content"> Actividades como cuatrimotos,
+tirolesas y senderismo por la zona natural. </div>
+</div>
+<!-- Paquete 3 -->
+<div class="card borde-mano">
+<div class="acordeon" onclick="toggleInfo('info3','arrow3')"> TURISMO
+CULTURAL <span id="arrow3" class="arrow">▼</span> </div>
+<div id="info3" class="acordeon-content"> Experiencias culturales como
+visitas a comunidades mayas para conocer su historia y tradiciones. </div>
+</div>
+<!-- Paquete 4 -->
+<div class="card borde-mano">
+<div class="acordeon" onclick="toggleInfo('info4','arrow4')">
+GASTRONOMÍA <span id="arrow4" class="arrow">▼</span> </div>
+<div id="info4" class="acordeon-content"> Degustación de platillos
+típicos yucatecos después del recorrido. </div>
+</div>
+<div class="footer">
+    Para reservaciones se recomienda contactar directamente a los proveedores locales en el siguiente enlace:<br><br>
+
+    <a href="https://www.facebook.com/share/1BS35BLBwL/" target="_blank" style="color: rgb(174, 228, 255); font-weight: bold; text-decoration: underline;">
+       👉 Página oficial en Facebook
+    </a>
+
+    <br><br>
+    O puedes comunicarte al siguiente número:<br>
+    <b>📞 997 117 27 56</b>
+</div>
+
+</div>
+
+<script>
+function toggleInfo(id, arrowId) {
+    const content = document.getElementById(id);
+    const arrow = document.getElementById(arrowId);
+
+    if (content.style.display === "block") {
+        content.style.display = "none";
+        arrow.classList.remove("rotate");
+    } else {
+        content.style.display = "block";
+        arrow.classList.add("rotate");
+    }
+}
+</script>
+</body></html>

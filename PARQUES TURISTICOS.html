@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta charset="UTF-8">
+  <title>PARQUES TURÍSTICOS</title>
+
+  
+  
+  <style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f5f8ff;
+}
+
+/* Contenedor general */
+.grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+/* Cada columna */
+.columna {
+    text-align: center;
+    width: 300px;
+}
+
+/* Títulos */
+.titulo {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Imágenes de parques */
+.columna img, .bomborota-img {
+    width: 100%;
+    border-radius: 8px;
+    border: 3px solid transparent;
+    transition: 0.4s ease;
+}
+
+/* Efecto hover */
+.columna img:hover, .bomborota-img:hover {
+    border-color: #0078ff;
+    box-shadow: 0 0 12px #0078ff;
+    transform: scale(1.05);
+}
+
+/* BOTÓN ANIMADO */
+.boton-parque {
+    display: inline-block;
+    padding: 12px 28px;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #0078ff, #00c8ff);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 120, 255, 0.4);
+}
+
+.boton-parque:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 120, 255, 0.6);
+}
+  </style>
+</head><body>
+<h1>PARQUES TURÍSTICOS</h1>
+
+<div class="grid"><!-- Grutas Chocantes -->
+<div class="columna">
+<div class="titulo">Grutas Chocantes</div>
+<a href="Grutas%20Chocantes.html"><img style="border: 0px solid ; width: 305px; height: 203px;" src="imagenes/grutas.jpg" alt="Grutas Chocantes"></a> <a style="background-color: rgb(204, 255, 255);" class="boton-parque" href="Grutas%20Chocantes.html">Ver más</a> </div>
+<!-- Sartenejas -->
+<div class="columna">
+<div class="titulo">Sartenejas</div>
+<a href="SARTENEJAS.html"><img style="border: 0px solid ; width: 297px; height: 157px;" src="imagenes/sartenejas.jpg" alt="Sartenejas"></a> <a style="background-color: rgb(204, 255, 255);" class="boton-parque" href="SARTENEJAS.html">Ver más</a> </div>
+<!-- Kaalmankal -->
+<div class="columna">
+<div class="titulo">Parque Ecoturístico Kaalmankal</div>
+<a href="KAALMANKAL.html"><img><img src="imagenes/kaalmankal.jpg" alt="Kaalmankal"> </a><a style="background-color: rgb(204, 255, 255);" class="boton-parque" href="KAALMANKAL.html">Ver más</a> </div>
+</div>
+
+<!-- La Bomborota -->
+<div style="margin-top: 60px;">
+<div class="titulo">La Bomborota</div>
+<a href="LA%20BOMBOROTA.html"><img><img class="bomborota-img" src="imagenes/bomborota.jpg" alt="La Bomborota" style="width: 300px;"> <br>
+</a><a style="background-color: rgb(204, 255, 255);" class="boton-parque" href="LA%20BOMBOROTA.html">Ver más</a>
+</div>
+
+</body></html>

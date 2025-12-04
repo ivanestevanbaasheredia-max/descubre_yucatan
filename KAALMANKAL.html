@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta charset="UTF-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAALMANKAL – Parque Ecoturístico</title>
+
+  
+  
+  <style>
+/* ----- Estilos generales ----- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f7f2;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Titulo */
+h1 {
+    text-align: center;
+    color: #2a5c37;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Descripción */
+.description {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    line-height: 1.6;
+}
+
+/* ----- Botones desplegables ----- */
+.toggle-box {
+    background: #ffffff;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.toggle-text {
+    background: #2a5c37;
+    color: white;
+    padding: 15px;
+    margin: 0;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Flecha animada */
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+    transform: rotate(180deg);
+}
+
+/* Hover */
+.toggle-text:hover {
+    background: #3a7849;
+}
+
+/* Contenido desplegable */
+.toggle-content {
+    display: none;
+    padding: 15px;
+    line-height: 1.6;
+    animation: fade 0.3s ease;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Pie de página */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 18px;
+    color: #2a5c37;
+    font-weight: bold;
+}
+  </style>
+</head><body>
+<div class="container">
+<h1>PARQUE ECOTURÍSTICO KAALMANKAL</h1>
+<div class="description"> <strong>Descripción:</strong> Es un parque
+ecoturístico en Tekax lleno de aventura y naturaleza. Cuenta con
+tirolesas, puentes colgantes, miradores y senderos donde puedes
+disfrutar las bonitas vistas de la zona. Es ideal para pasar el día,
+tomar fotos y vivir experiencias al aire libre mientras conoces la
+riqueza natural del sur de Yucatan. <br>
+<br>
+<strong>Horario:</strong> 24 horas <br>
+<strong>Ubicación:</strong> Calle 70 carretera Tekax–Kankab km 1,
+Tekax, Yucatan, México.
+</div>
+<!-- TOUR DE AVENTURA -->
+<div class="toggle-box">
+<p class="toggle-text" onclick="toggleInfo('info1', 'arrow1')"> 🧗‍♂️
+TOUR DE AVENTURA <span id="arrow1" class="arrow">▼</span> </p>
+<div id="info1" class="toggle-content"> • Rappel: Descenso en muro
+natural de casi 10 metros <br>
+• Péndulo: Mécete en una cuerda como tarzán <br>
+• Gruta: Exploración de una gruta de 50 metros con formaciones rocosas
+y vestigios mayas <br>
+• Mirador y Columpio: Vista panorámica y gran columpio en la cima del
+cerro </div>
+</div>
+<!-- CAMPING -->
+<div class="toggle-box">
+<p class="toggle-text" onclick="toggleInfo('info2', 'arrow2')"> 🏕️
+CAMPING KAALMANKAL <span id="arrow2" class="arrow">▼</span> </p>
+<div id="info2" class="toggle-content"> • Acceso por 24 horas <br>
+• Área de camping, leña, fogatero, asador, hamaqueros, sillas, mesas,
+baños, regaderas y piscina </div>
+</div>
+<!-- REDES SOCIALES -->
+<div class="toggle-box">
+<p class="toggle-text" onclick="toggleInfo('info3', 'arrow3')"> 🌐
+REDES SOCIALES <span id="arrow3" class="arrow">▼</span> </p>
+<div id="info3" class="toggle-content"> <a href="https://www.facebook.com/share/1A85YwhTsU/" target="_blank">📘
+Facebook – KAALMANKAL</a> <br>
+<br>
+<a href="https://wa.me/message/YLT7Q62UPKBIN1" target="_blank">Whatsapp-kaalmankal</a><br>
+<br>
+<a href="https://www.instagram.com/kaalmankal?igsh=NnFhZDVlb3U1OWR4" target="_blank"> 📸 Instagram – @kaalmankal </a> </div>
+</div>
+</div>
+
+<script>
+function toggleInfo(contentId, arrowId) {
+    const content = document.getElementById(contentId);
+    const arrow = document.getElementById(arrowId);
+
+    if (content.style.display === "block") {
+        content.style.display = "none";
+        arrow.classList.remove("rotate");
+    } else {
+        content.style.display = "block";
+        arrow.classList.add("rotate");
+    }
+}
+</script>
+</body></html>

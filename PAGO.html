@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pago - Opciones</title>
+
+
+
+  <style>
+:root{
+--bg:#f4f6f8;
+--card:#fff;
+--accent:#1a73e8;
+--success:#16a34a;
+--muted:#6b7280;
+}
+body{
+margin:0;
+font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+background:var(--bg);
+display:flex;
+align-items:center;
+justify-content:center;
+min-height:100vh;
+padding:24px;
+}
+
+.panel{
+width:100%;
+max-width:780px;
+background:var(--card);
+border-radius:12px;
+box-shadow:0 8px 30px rgba(2,6,23,0.08);
+padding:22px;
+}
+
+h1{ margin:0 0 12px 0; font-size:22px }
+p.lead{ color:var(--muted); margin-top:6px }
+
+/* CONTENEDOR DE OPCIONES */
+.options{
+display:grid;
+grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+gap:12px;
+margin:18px 0;
+}
+
+.opt {
+padding:14px;
+border-radius:10px;
+border:1px solid #e6eefc;
+background:#fff;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:12px;
+transition:transform .12s, box-shadow .12s, border-color .12s;
+}
+.opt:hover{ transform:translateY(-4px); box-shadow:0 8px 20px rgba(26,115,232,0.06) }
+.opt input{ accent-color: var(--accent); transform:scale(1.1) }
+.opt.selected{ border-color: var(--accent); box-shadow:0 10px 30px rgba(26,115,232,0.08) }
+
+.title{ font-weight:700 }
+.sub{ color:var(--muted); font-size:13px }
+
+/* FORMULARIOS */
+.form-area{ margin-top:18px; display:grid; gap:12px; }
+
+.row{ display:flex; gap:12px; }
+.col{ flex:1 }
+
+label{ font-size:13px; color:#111827; display:block; margin-bottom:6px }
+input[type="text"], input[type="month"], input[type="tel"]{
+width:100%;
+padding:10px 12px;
+border-radius:8px;
+border:1px solid #d1d5db;
+outline:none;
+font-size:15px;
+}
+input:focus{
+box-shadow:0 8px 24px rgba(26,115,232,0.06);
+border-color: rgba(26,115,232,0.5);
+}
+
+/* BOTÓN */
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:12px 18px;
+background:linear-gradient(90deg,var(--accent), #2bb5ff);
+color:white;
+border-radius:10px;
+border:none;
+font-weight:700;
+cursor:pointer;
+font-size:16px;
+}
+
+/* OVERLAY PAGADO */
+.overlay{
+position:fixed;
+inset:0;
+display:none;
+align-items:center;
+justify-content:center;
+background: rgba(0,0,0,0.45);
+z-index:50;
+}
+.overlay.show{ display:flex; }
+
+.receipt{
+background:white;
+padding:22px;
+border-radius:12px;
+text-align:center;
+min-width:260px;
+box-shadow:0 10px 40px rgba(2,6,23,0.2);
+animation: pop 0.4s ease forwards;
+opacity:0;
+}
+
+/* ANIMACIÓN DEL CHECK */
+.check{
+width:86px; height:86px; border-radius:50%;
+margin:0 auto 10px;
+display:flex; align-items:center; justify-content:center;
+background:linear-gradient(90deg,var(--success), #10b981);
+color:white; font-size:40px;
+box-shadow:0 10px 30px rgba(16,185,129,0.18);
+transform:scale(0);
+animation: checkPop 0.4s ease 0.3s forwards;
+}
+@keyframes checkPop{
+0%{ transform:scale(0); opacity:0; }
+100%{ transform:scale(1); opacity:1; }
+}
+
+@keyframes pop{
+0%{ transform:scale(0.7); opacity:0; }
+100%{ transform:scale(1); opacity:1; }
+}
+
+/* Nota */
+.help{ color:var(--muted); font-size:13px; margin-top:8px }
+  </style>
+</head><body>
+
+<div class="panel">
+<h1>Forma de pago</h1>
+<p class="lead">Selecciona el método de pago.</p>
+
+<!-- OPCIONES -->
+<div class="options">
+
+<div>
+<div class="title">Tarjeta de crédito</div>
+<div class="sub">Visa, MasterCard, Amex</div>
+</div>
+<!-- Crédito -->
+<label class="opt" data-value="credit">
+<input name="metodo" value="credit" type="radio">
+</label><div></div>
+
+
+<div>
+<div class="title">Tarjeta de débito</div>
+<div class="sub">Pago directo desde cuenta</div>
+</div>
+<!-- Débito -->
+<label class="opt selected" data-value="debit">
+<input name="metodo" value="debit" checked="checked" type="radio">
+</label><div></div>
+
+
+<div>
+<div class="title">Transferencia</div>
+<div class="sub">SPEI / depósitos</div>
+</div>
+<!-- Transferencia -->
+<label class="opt" data-value="transfer">
+<input name="metodo" value="transfer" type="radio">
+</label><div></div>
+
+
+<div>
+<div class="title">PayPal</div>
+<div class="sub">Pago seguro con tu cuenta</div>
+</div>
+<!-- PayPal -->
+<label class="opt" data-value="paypal">
+<input name="metodo" value="paypal" type="radio">
+</label><div></div>
+
+
+<div>
+<div class="title">OXXO</div>
+<div class="sub">Genera un código de pago</div>
+</div>
+<!-- OXXO -->
+<label class="opt" data-value="oxxo">
+<input name="metodo" value="oxxo" type="radio">
+</label><div></div>
+
+
+</div>
+
+<!-- FORMULARIOS -->
+<form id="paymentForm" class="form-area">
+
+<!-- TARJETAS -->
+<div id="cardFields">
+<label>Número de tarjeta</label>
+<input id="cardNumber" maxlength="19" placeholder="1234 5678 9012 3456" type="tel">
+
+<div class="row">
+<div class="col">
+<label>Fecha de vencimiento</label>
+<input id="expiry" type="month">
+</div>
+
+<div class="col">
+<label>CVV</label>
+<input id="cvv" maxlength="4" placeholder="123" type="text">
+</div>
+</div>
+</div>
+
+<!-- TRANSFERENCIA -->
+<div id="transferFields" style="display: none;">
+<label>Nombre del titular</label>
+<input id="accountName" placeholder="Titular de la cuenta" type="text">
+
+<label>Referencia</label>
+<input id="reference" placeholder="Ej: 2024-ABC123" type="text">
+</div>
+
+<!-- PayPal -->
+<div id="paypalMsg" style="display: none;">
+<p class="lead">Serás redirigido a PayPal para completar tu pago.</p>
+</div>
+
+<!-- OXXO -->
+<div id="oxxoMsg" style="display: none;">
+<p class="lead">Se generará un código de pago OXXO.</p>
+</div>
+
+<button class="btn" type="submit">Pagar ahora</button>
+</form>
+
+</div>
+
+
+<!-- OVERLAY ANIMACIÓN -->
+<div id="overlay" class="overlay">
+<div class="receipt">
+<div class="check">✔</div>
+<h3>Pagado</h3>
+<p>Transacción completada con éxito.</p>
+</div>
+</div>
+
+
+<script>
+const opts = document.querySelectorAll(".opt");
+const cardFields = document.getElementById("cardFields");
+const transferFields = document.getElementById("transferFields");
+const paypalMsg = document.getElementById("paypalMsg");
+const oxxoMsg = document.getElementById("oxxoMsg");
+
+// Selección visual
+opts.forEach(opt => {
+opt.addEventListener("click", () => {
+opts.forEach(o => o.classList.remove("selected"));
+opt.classList.add("selected");
+opt.querySelector("input").checked = true;
+updateFields();
+});
+});
+
+function updateFields(){
+let method = document.querySelector("input[name='metodo']:checked").value;
+
+cardFields.style.display = (method === "credit" || method === "debit") ? "block" : "none";
+transferFields.style.display = (method === "transfer") ? "block" : "none";
+paypalMsg.style.display = (method === "paypal") ? "block" : "none";
+oxxoMsg.style.display = (method === "oxxo") ? "block" : "none";
+}
+updateFields();
+
+// Formato tarjeta
+document.getElementById("cardNumber").addEventListener("input", (e)=>{
+let v = e.target.value.replace(/\D/g,"").slice(0,16);
+e.target.value = v.replace(/(\d{4})/g,"$1 ").trim();
+});
+
+// Submit
+document.getElementById("paymentForm").addEventListener("submit", e=>{
+e.preventDefault();
+
+let method = document.querySelector("input[name='metodo']:checked").value;
+
+// Validaciones
+if(method === "transfer"){
+if(!accountName.value.trim() || !reference.value.trim()){
+alert("Por favor rellene los apartados");
+return;
+}
+}
+if(method === "credit" || method === "debit"){
+if(cardNumber.value.replace(/\s/g,"").length < 13 || !expiry.value || !cvv.value){
+alert("Por favor rellene los apartados");
+return;
+}
+}
+
+// Mostrar animación
+document.getElementById("overlay").classList.add("show");
+
+// Redirección después de animación
+setTimeout(()=>{
+window.location.href = "Descubre Yucatan.html";
+}, 1400);
+});
+</script>
+
+</body></html>

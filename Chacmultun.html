@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta charset="UTF-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chacmultun – Tekax</title>
+
+  
+  
+  <style>
+
+/* &#127754; BORDE ONDA AZUL */
+.borde-onda-azul {
+padding: 15px;
+border-radius: 18px;
+position: relative;
+overflow: hidden;
+color: #ffffff;
+background: #0a1f33;
+}
+
+.borde-onda-azul::before {
+content: "";
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: radial-gradient(
+circle,
+rgba(0,153,255,0.8) 10%,
+rgba(0,102,204,0.6) 40%,
+rgba(0,51,153,0.4) 70%,
+transparent 100%
+);
+animation: ondaAzul 6s infinite linear;
+transform-origin: center;
+}
+
+.borde-onda-azul::after {
+content: "";
+position: absolute;
+inset: 4px;
+background: #0a1f33;
+border-radius: 14px;
+z-index: 1;
+}
+
+.borde-onda-azul * {
+position: relative;
+z-index: 2;
+}
+
+@keyframes ondaAzul {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+/* ----- Estilos generales ----- */
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+background: #f4f7f2;
+color: #333;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+padding: 20px;
+}
+
+/* ----- Titulo ----- */
+h1 {
+text-align: center;
+color: #2a5c37;
+font-size: 32px;
+margin-bottom: 10px;
+}
+
+/* ----- Caja Descriptiva ----- */
+.description {
+background: #ffffff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+line-height: 1.6;
+margin-bottom: 20px;
+}
+
+.description img {
+width: 100%;
+max-width: 350px;
+display: block;
+margin: 15px auto;
+border-radius: 10px;
+}
+
+/* ----- Subtitulos ----- */
+.subtitle {
+text-align: center;
+font-size: 22px;
+color: #2a5c37;
+font-weight: bold;
+margin-top: 30px;
+}
+
+/* ----- Bloques desplegables ----- */
+.toggle-box {
+background: #ffffff;
+margin-top: 20px;
+border-radius: 10px;
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+overflow: hidden;
+}
+
+.toggle-text {
+background: #2a5c37;
+color: white;
+padding: 15px;
+margin: 0;
+cursor: pointer;
+font-size: 18px;
+font-weight: bold;
+display: flex;
+justify-content: space-between;
+align-items: center;
+user-select: none;
+}
+
+.toggle-text:hover {
+background: #3a7849;
+}
+
+.arrow {
+transition: transform 0.3s ease;
+}
+.arrow.rotate {
+transform: rotate(180deg);
+}
+
+.toggle-content {
+display: none;
+padding: 15px;
+line-height: 1.6;
+animation: fade 0.3s ease;
+}
+
+@keyframes fade {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+/* Pie */
+.footer {
+margin-top: 40px;
+text-align: center;
+font-size: 20px;
+color: #2a5c37;
+font-weight: bold;
+}
+
+  </style>
+</head><body>
+<div class="container">
+<h1>Chacmultun</h1>
+<div class="description"> <strong>Descripción:</strong><br>
+Es una zona arqueológica maya en la región de Tekax, Yucatán, que
+destaca por su arquitectura de estilo Puuc, sus elaborados relieves y
+el color rojizo de sus construcciones, que proviene de microorganismos
+en la piedra. su nombre significa "montículo de piedra roja". florecio
+entre los años 800 y 1000, fue un importante centro de comercio y
+cuenta con estructuras notables como el Edificio de las Pinturas y el
+palacio, además de un juego de pelota <br>
+<big><big><small style="font-weight: bold;">Acceso gratuito<br>
+</small></big></big>
+<div class="tarjeta"><big><big><small style="font-weight: bold;"> <img style="width: 319px; height: 221px;" src="imagenes/chacmultun.jpg" class="imagen-marco" alt="Chacmultun"><br>
+DÉJATE CAUTIVAR POR ESTA MARAVILLA ANCESTRAL!!</small><big><big><!-- Paquete 1 --> </big></big></big></big>
+<div class="toggle-box borde-onda-azul">
+<p class="toggle-text" onclick="toggleInfo('info1','arrow1')"><big><big><big><big>&nbsp;
+<small><small>UBICACIÓN<span id="arrow1" class="arrow">▼</span></small></small>
+</big></big></big></big></p>
+<div style="display: none;" id="info1" class="toggle-content">
+<big><big><big><big>Se localiza aproximadamente a 120 km de la ciudad
+de Mérida Yucatán,
+situado en la región Puuc del municipio de Tekax, 10 km al suroeste de
+la cabecera de Tekax.
+&lt;
+</big></big></big></big></div>
+</div>
+<big><big><big><big>
+<script>
+function toggleInfo(id, arrowId) {
+const content = document.getElementById(id);
+const arrow = document.getElementById(arrowId);
+
+if (content.style.display === "block") {
+content.style.display = "none";
+arrow.classList.remove("rotate");
+} else {
+content.style.display = "block";
+arrow.classList.add("rotate");
+}
+}
+</script></big></big></big></big></div>
+</div>
+</div>
+
+</body></html>
